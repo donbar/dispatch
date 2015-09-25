@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/inetpub/wwwroot"
+		},
+		{
+			"path": "aspnet_client"
+		},
+		{
+			"path": "gps"
+		},
+		{
+			"path": "images"
+		},
+		{
+			"path": "includes"
+		},
+		{
+			"path": "js"
+		}
+	]
+}

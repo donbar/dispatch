@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "dispatchstatusajax.php",
+			"settings":
+			{
+				"buffer_size": 6039,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "history.php",
+			"settings":
+			{
+				"buffer_size": 5553,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "reports.php",
+			"settings":
+			{
+				"buffer_size": 4474,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "includes/dbconnection.php",
+			"settings":
+			{
+				"buffer_size": 2910,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "truckmanager.php",
+			"settings":
+			{
+				"buffer_size": 6639,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/inetpub/wwwroot/dispatchmanager.php",
+		"/C/inetpub/wwwroot/map.php",
+		"/C/inetpub/wwwroot/dispatchstatusajax.php",
+		"/C/inetpub/wwwroot/includes/dispatch.css",
+		"/C/inetpub/wwwroot/truckstatusajax.php",
+		"/C/inetpub/wwwroot/truckmanager.php",
+		"/C/inetpub/wwwroot/index.php",
+		"/C/inetpub/wwwroot/truckmessageajax.php",
+		"/C/inetpub/wwwroot/includes/dbconnection.php",
+		"/C/inetpub/wwwroot/base.php",
+		"/C/inetpub/wwwroot/basemanager.php",
+		"/C/inetpub/wwwroot/basemanagerajax.php",
+		"/C/inetpub/wwwroot/pacestatusajax.php",
+		"/C/inetpub/wwwroot/pacemanager.php",
+		"/C/inetpub/wwwroot/pace.php",
+		"/C/inetpub/wwwroot/history.php",
+		"/C/Program Files (x86)/PHP/v5.3/php.ini",
+		"/C/inetpub/wwwroot/towerview.php",
+		"/C/inetpub/wwwroot/realtimestatus.php",
+		"/C/inetpub/wwwroot/event.php",
+		"/C/inetpub/wwwroot/truck.php",
+		"/C/inetpub/wwwroot/includes/version.php",
+		"/C/inetpub/wwwroot/dispatch.php",
+		"/C/inetpub/wwwroot/realtimestatusajax.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\inetpub\\wwwroot"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"math",
+			"holdingtablename",
+			"norm",
+			"'override",
+			"rollover",
+			"button",
+			"go",
+			"[2]",
+			"[2",
+			"[2]",
+			"vehicle",
+			"$status",
+			"status",
+			"loggedinas",
+			"000000",
+			"a0a0a0",
+			"-1",
+			"pace",
+			"error_level",
+			"error_log",
+			"preventrefresh",
+			"time",
+			"rollover",
+			"v.1",
+			"10",
+			"warningbox",
+			"messagebox",
+			"warningbox",
+			"$event_id",
+			"showstatus",
+			"$event_id",
+			"<body"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ffffff"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dispatchstatusajax.php",
+					"settings":
+					{
+						"buffer_size": 6039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4068,
+								4068
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 56.0,
+						"translation.y": 1119.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "history.php",
+					"settings":
+					{
+						"buffer_size": 5553,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5533,
+								5509
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1698.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "reports.php",
+					"settings":
+					{
+						"buffer_size": 4474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "includes/dbconnection.php",
+					"settings":
+					{
+						"buffer_size": 2910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								593,
+								568
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "truckmanager.php",
+					"settings":
+					{
+						"buffer_size": 6639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1322,
+								1322
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 316.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true
+}
