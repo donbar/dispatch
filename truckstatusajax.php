@@ -35,6 +35,12 @@ $update_query = "
 	update event_vehicle set last_checkin = now() where event_id = " . $event_id . " and vehicle_id = " . $vehicle_id;
 $update_result = $db->query($update_query);	
 
+$status_query = "
+	select notavailable from event_vehicle  where event_id = " . $event_id . " and vehicle_id = " . $vehicle_id;
+$status_result = $db->query($status_query);
+$status_row = $status_result->fetch(PDO::FETCH_ASSOC);
+$status = $status_row['notavailable'];
+
 $incident_count_query = "
 SELECT count(*) as counter
 FROM incident_vehicle INNER JOIN incident ON incident_vehicle.incident_id = incident.ID
@@ -81,6 +87,7 @@ print "<span class='clock'> $track_name " . date('h:i:s A') . "</span>";
 
 print "<span id='truck' class='truck' style='background-color:$background; vertical-align: top'>";
 print "<table cellpadding=2 cellspacing=2 width='85%' style='margin: 0px auto;' border=0 >";
+print "<input type='hidden' name='oncall' value='1'>";
 
 $allclear = 0;
 if ($vehicle_row{'track_config_input'}){
@@ -110,7 +117,15 @@ if ($vehicle_row{'track_config_input'}){
 
 }else{
 	/* there is nothing to display */
-	print "<tr><td>&nbsp;</td></tr>";
+
+	if($status == 1){
+		# not available
+		$button = "<input type='button' class='truckoverridebuttonoffline' id='make_available' value='OUT OF SERVICE: Touch to Show Truck As Available' onclick='document.truck.actionbtn.value=-101;document.truck.submit();'>";
+	}else{
+		$button = "<input type='button' class='truckoverridebuttonactive' id='make_not_available' value='IN SERVICE: Touch to Show Truck As NOT Available' onclick='document.truck.actionbtn.value=-100;document.truck.submit();'>";
+	}
+
+	print "<tr><td><font color='white'>".$button."</font></td></tr>";
 	$allclear = 1;
 }	
 print "</table>";
