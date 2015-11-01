@@ -39,6 +39,13 @@ while ($vehicle_row = $vehicle_result->fetch(PDO::FETCH_ASSOC)) {
 	$incident_count_row = $incident_count_result->fetch(PDO::FETCH_ASSOC);
 	$incident_count = $incident_count_row['counter'];
 
+
+	$status_query = "
+		select notavailable from event_vehicle  where event_id = " . $event_id . " and vehicle_id = " . $vehicle_row['vehicle_id'];
+	$status_result = $db->query($status_query);
+	$status_row = $status_result->fetch(PDO::FETCH_ASSOC);
+	$notavailstatus = $status_row['notavailable'];	
+
 	$vehicle_count++;
 	$status_id = '';
 
@@ -57,8 +64,13 @@ while ($vehicle_row = $vehicle_result->fetch(PDO::FETCH_ASSOC)) {
 	}elseif ($status_id[0] == 5){
 		$status = "<span style='color:orange'>NOT ACKNOWLEDGED</span>";		
 	}else{
-		$status = "<span style='color:green'>Available</span>";		
-		$timeifavail = -1;
+		if ($notavailstatus == 1){
+			$status = "<span style='color:red'>Removed From Service</span>";		
+			$timeifavail = -1;
+		}else{
+			$status = "<span style='color:green'>Available</span>";		
+			$timeifavail = -1;
+		}
 	}
 	if ($lastseen > 3600){
 		# if offline over an hour, don't show how long

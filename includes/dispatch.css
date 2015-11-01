@@ -45,7 +45,7 @@ span.localflags{
     background-color: #00000;
     right: 0;
     top: 30px;
-    height:85%;
+    height:350px;
     width: 150px;
     max-width:150px;
 }
@@ -107,7 +107,7 @@ span.loggedinas{
 span.truckbuttons{
     position: absolute;
     top: 245px;
-    margin: 5px -15px 0px 0px;
+    margin: 25px -15px 0px 0px;
     padding: 5px 10px;
     width: 100%;
     height: 100px;
@@ -258,6 +258,23 @@ font-size:1em;
 cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
 padding:20px 10px; /*add some padding to the inside of the button*/
 background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size:1em;
+}
+.truckoverridebuttonoffline{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding:20px 10px; /*add some padding to the inside of the button*/
+background:red; /*the colour of the button*/
 border:1px solid #33842a; /*required or the default border for the browser will appear*/
 /*give the button curved corners, alter the size as required*/
 -moz-border-radius: 10px;

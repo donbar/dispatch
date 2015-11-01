@@ -62,6 +62,8 @@ function showMessage(event,vehicle) {
         setTimeout(showMessage, randomrefresh );
 }
 
+
+
 function getGlobalCommand() {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -108,6 +110,18 @@ function checkforGlobalCommand() {
 
 /* If we are coming in from a POST, let's save the data quickly */
 
+
+if ($_REQUEST['actionbtn']	== -100){
+	/* mark as away */
+	$update_status_query = "update event_vehicle set notavailable = 1 where vehicle_id = ". $vehicle_id . " and event_id = " . $event_id;
+	$insert_veh_result = $db->query($update_status_query);
+}
+
+if ($_REQUEST['actionbtn']	== -101){
+	/* mark as available again */
+	$update_status_query = "update event_vehicle set notavailable = 0 where vehicle_id = ". $vehicle_id . " and event_id = " . $event_id;
+	$insert_veh_result = $db->query($update_status_query);
+}
 if ($_POST['actionbtn'] > 0){
 
 	$field = "";
@@ -181,6 +195,7 @@ if ($_POST['actionbtn'] > 0){
 		$cleanitquery = "delete from message where  not exists (select count(*) from message_vehicle where message_id = ". $_REQUEST{'message_id'} . ")";
 		$insert_veh_result = $db->query($cleanitquery);
 	}		
+
 
 
 }
@@ -558,7 +573,7 @@ function showStandingYellowFlag(turn, scale){
     if ( turn ) {
             var artificiallength = turn.length + 7;
             var divisor = '1.'+artificiallength.toString();
-            var divisor = 2.4;            
+            var divisor = 3.0;            
             var textheight = (clientHeight / divisor);
             var textString = turn.trim();
             var ctx = canvas.getContext("2d");
@@ -658,7 +673,7 @@ function showDebrisFlag(turn, scale){
 
             var artificiallength = turn.length + 7;
             var divisor = '1.'+artificiallength.toString();
-            var divisor = 2.4;            
+            var divisor = 3.0;            
             var textheight = (clientHeight / divisor);
             var textString = turn.trim();
             var ctx = c.getContext("2d");
@@ -728,7 +743,7 @@ function blinkwavingYellow(turn, scale, even){
                 if ( turn ) {
                         var artificiallength = turn.length + 7;
                         var divisor = '1.'+artificiallength.toString();
-                        var divisor = 2.4;            
+                        var divisor = 3.0;            
                         var textheight = (clientHeight / divisor);
                         var textString = turn.trim();
                         var ctx = canvas.getContext("2d");
@@ -775,7 +790,7 @@ function blinkwavingYellow(turn, scale, even){
                 if ( turn ) {
                         var artificiallength = turn.length + 7;
                         var divisor = '1.'+artificiallength.toString();
-                        var divisor = 2.4;            
+                        var divisor = 3.0;            
                         var textheight = (clientHeight / divisor);
                         var textString = turn.trim();
                         var ctx = canvas.getContext("2d");
