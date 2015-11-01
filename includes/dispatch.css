@@ -31,6 +31,24 @@ span.topback{
     width: 100%;
 
 }
+span.globalflags{
+    position: absolute;
+    background-color: #00000;
+    left: 0;
+    top: 30px;
+    height:85%;
+    width: 150px;
+    max-width:150px;
+}
+span.localflags{
+    position: absolute;
+    background-color: #00000;
+    right: 0;
+    top: 30px;
+    height:85%;
+    width: 150px;
+    max-width:150px;
+}
 span.normal, td{
 		font-size: 16px;
 		color: #ffffff;
@@ -73,9 +91,10 @@ span.history {
 span.truck{
     position: absolute;
     top: 0px;
-    margin: 5%;
+    margin: 80px 150px 0px 150px;
     padding: 5px 10px;
-    width: 90%;
+    width: 80%;
+    max-width:80%;
     height: 230px;
 }
 span.loggedinas{
@@ -87,11 +106,11 @@ span.loggedinas{
 }
 span.truckbuttons{
     position: absolute;
-    top: 235px;
-    margin: 15px;
+    top: 245px;
+    margin: 5px -15px 0px 0px;
     padding: 5px 10px;
-    width: 95%;
-    height: 200px;
+    width: 100%;
+    height: 100px;
 }
 span.eventmenu{
     position: absolute;
@@ -104,8 +123,10 @@ span.menu{
 }
 span.marquee {
     position: absolute;
-    top: 90%;
-    width: 100%;
+    margin: 0px, 150px, 0px, 0px;
+    bottom: 0%;
+    width: 95%;
+    max-width:95%;
     font-size: 24px;
     color: #000000;
 }
@@ -365,6 +386,13 @@ font-size:1em;
 #events tr:hover {
     background-color: #ffff99;
     color: #000000;
+}
+.checkered{
+    background-color: white;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+        linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+    background-size:50px 50px;
+    background-position: 0 0, 25px 25px;
 }
 div#map_canvas { width:100%; height:100%; }
 </style>

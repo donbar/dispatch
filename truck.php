@@ -16,6 +16,7 @@ $db = getdbconnection();
 		results = thevar.split("/");
 		document.truck.event_id.value= results[0];
 		document.truck.vehicle_id.value= results[1];
+		document.truck.track_id.value= results[2];
 		document.truck.submit();
 	}
 	</script>
@@ -24,6 +25,7 @@ $db = getdbconnection();
 print "<body>";
 print "<form name='truck' method='post' action='truckmanager.php'>";
 print "<input type='hidden' name='event_id'>";
+print "<input type='hidden' name='track_id'>";
 print "<input type='hidden' name='vehicle_id'><br>";
 
 $event_query = "
@@ -41,7 +43,7 @@ print "<center>";
 print "<span class='selecttext'>Event and Truck? </span><select name='eventvehicle' id='eventvehicle' class='largetext' onchange='changelogin();'>";
 print "<option name='eventvehicle' value=0>Select One</option>";
 while ($event_row = $event_result->fetch(PDO::FETCH_ASSOC)) {
-	print "<option name='eventvehicle' value='".$event_row['evid']."/".$event_row['vid']."'>".$event_row['track_name'] . " - " . $event_row['vehicle_name']."</option>";
+	print "<option name='eventvehicle' value='".$event_row['evid']."/".$event_row['vid']."/".$event_row['track_id']."'>".$event_row['track_name'] . " - " . $event_row['vehicle_name']."</option>";
 }
 print "</select>";
 print "</center>";
