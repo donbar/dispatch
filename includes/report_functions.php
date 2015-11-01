@@ -78,7 +78,8 @@ if ($event_id == -1){
 			INNER JOIN vehicle ON incident_vehicle.vehicle_id = vehicle.ID
 			where event.track_id = " . $track_id . "
 			and vehicle.ID = " . $vehicle_id . "
-			and ".$field1." <> " . $field2 . ")
+			and (".$field1." <> " . $field2 . ")
+			)
 		";
 }else{
 	$holdingtable = "
@@ -88,14 +89,17 @@ if ($event_id == -1){
 			FROM (incident_vehicle INNER JOIN incident ON incident_vehicle.incident_id = incident.ID) 
 			INNER JOIN vehicle ON incident_vehicle.vehicle_id = vehicle.ID where event_id = " . $event_id . "
 			and vehicle.ID = " . $vehicle_id . "
-			and ".$field1." <> " . $field2 . ")
+			and (".$field1." <> " . $field2 . ")
+			)
 		";
 }	
+
 $holding_result = $db->query($holdingtable);
 
 $removeoutliers = "delete report_data from 
 					(select top 1 * from report_data where ack = (select max(ack) from report_data where session_id = " . $session . ")
 					and session_id = " . $session . ")";
+
 $holding_result = $db->query($removeoutliers);
 
 $removeoutliers = "delete report_data from 
