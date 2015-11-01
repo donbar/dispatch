@@ -558,7 +558,7 @@ function showStandingYellowFlag(turn, scale){
     if ( turn ) {
             var artificiallength = turn.length + 7;
             var divisor = '1.'+artificiallength.toString();
-            var divisor = 2.4;            
+            var divisor = 3.0;            
             var textheight = (clientHeight / divisor);
             var textString = turn.trim();
             var ctx = canvas.getContext("2d");
@@ -658,7 +658,7 @@ function showDebrisFlag(turn, scale){
 
             var artificiallength = turn.length + 7;
             var divisor = '1.'+artificiallength.toString();
-            var divisor = 2.4;            
+            var divisor = 3.0;            
             var textheight = (clientHeight / divisor);
             var textString = turn.trim();
             var ctx = c.getContext("2d");
@@ -728,7 +728,7 @@ function blinkwavingYellow(turn, scale, even){
                 if ( turn ) {
                         var artificiallength = turn.length + 7;
                         var divisor = '1.'+artificiallength.toString();
-                        var divisor = 2.4;            
+                        var divisor = 3.0;            
                         var textheight = (clientHeight / divisor);
                         var textString = turn.trim();
                         var ctx = canvas.getContext("2d");
@@ -775,7 +775,7 @@ function blinkwavingYellow(turn, scale, even){
                 if ( turn ) {
                         var artificiallength = turn.length + 7;
                         var divisor = '1.'+artificiallength.toString();
-                        var divisor = 2.4;            
+                        var divisor = 3.0;            
                         var textheight = (clientHeight / divisor);
                         var textString = turn.trim();
                         var ctx = canvas.getContext("2d");
