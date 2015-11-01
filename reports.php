@@ -248,8 +248,22 @@ if (isset($_POST['track']) && $_POST['track'] > 0){
 		$session = rand(1,5000000);
 
 		print "<table width='100%' border=1>";
-		print "<tr style='font-weight: bold;'><td>&nbsp;</td><td align='center'>Acknowledge</td><td align='center'>On Scene</td><td align='center'>Clear Scene</td><td align='center'>Off Course</td><td align='center'>Available</td></tr>";
-		print "<tr style='font-weight: bold;'><td>Truck</td><td align='center'>Median / Avg</td><td align='center'>Median / Avg</td><td align='center'>Median / Avg</td><td align='center'>Median / Avg</td><td align='center'>Median / Avg</td></tr>";
+		print "<tr style='font-weight: bold;'><td>&nbsp;</td>
+				<td align='center'>Acknowledge</td>
+				<td align='center'>On Scene</td>
+				<td align='center'>Clear Scene</td>
+				<td align='center'>Off Course</td>
+				<td align='center'>Available</td>
+				<td align='center' bgcolor='#c0c0c0'>Time on Course</td>
+				</tr>";
+		print "<tr style='font-weight: bold;'><td>Truck</td>
+				<td align='center'>Median / Avg</td>
+				<td align='center'>Median / Avg</td>
+				<td align='center'>Median / Avg</td>
+				<td align='center'>Median / Avg</td>
+				<td align='center'>Median / Avg</td>
+				<td align='center' bgcolor='#c0c0c0'>Median / Avg</td>
+				</tr>";
 
 
 	
@@ -268,8 +282,10 @@ if (isset($_POST['track']) && $_POST['track'] > 0){
 		$objPHPExcel->getActiveSheet()->mergeCells('H7:I7');
 		$objPHPExcel->getActiveSheet()->setCellValue('J7',"Available");
 		$objPHPExcel->getActiveSheet()->mergeCells('J7:K7');
-		$objPHPExcel->getActiveSheet()->getStyle("B7:K7")->applyFromArray($style);
-		$objPHPExcel->getActiveSheet()->getStyle("B7:K7")->applyFromArray($stylebold);
+		$objPHPExcel->getActiveSheet()->setCellValue('L7',"Time on Course");
+		$objPHPExcel->getActiveSheet()->mergeCells('L7:M7');
+		$objPHPExcel->getActiveSheet()->getStyle("B7:M7")->applyFromArray($style);
+		$objPHPExcel->getActiveSheet()->getStyle("B7:M7")->applyFromArray($stylebold);
 
 		$objPHPExcel->getActiveSheet()->setCellValue('A8',"Truck");
 		$objPHPExcel->getActiveSheet()->setCellValue('B8',"Median");
@@ -286,7 +302,10 @@ if (isset($_POST['track']) && $_POST['track'] > 0){
 
 		$objPHPExcel->getActiveSheet()->setCellValue('J8',"Median");
 		$objPHPExcel->getActiveSheet()->setCellValue('K8',"Average");
-		$objPHPExcel->getActiveSheet()->getStyle("A8:K8")->applyFromArray($stylebold);
+
+		$objPHPExcel->getActiveSheet()->setCellValue('L8',"Median");
+		$objPHPExcel->getActiveSheet()->setCellValue('M8',"Average");		
+		$objPHPExcel->getActiveSheet()->getStyle("A8:M8")->applyFromArray($stylebold);
 
 		$row = 8;
 
@@ -303,14 +322,17 @@ if (isset($_POST['track']) && $_POST['track'] > 0){
 			$averageoff = average($session, $event_id, $track_id, $vehicle_id,'tm_clear','tm_offcourse');
 			$medianavail = median($session, $event_id, $track_id, $vehicle_id,'tm_offcourse','tm_available');
 			$averageavail = average($session, $event_id, $track_id, $vehicle_id,'tm_offcourse','tm_available');
+			$mediantmcourse = median($session, $event_id, $track_id, $vehicle_id,'tm_acknowledge','tm_offcourse');
+			$averagetmcourse = average($session, $event_id, $track_id, $vehicle_id,'tm_acknowledge','tm_offcourse');			
 		
-			
+
 			print "<td>" . $truck_row['vehicle_name'] . "</td>";
 			print "<td align='center'>" . $medianack . " / " . $averageack . "</td>";
 			print "<td align='center'>" . $medianon . " / " . $averageon . "</td>";
 			print "<td align='center'>" . $medianclear . " / " . $averageclear . "</td>";
 			print "<td align='center'>" . $medianoff . " / " . $averageoff . "</td>";
-			print "<td align='center'>" . $medianavail . " / " . $averageavail . "</td>";				
+			print "<td align='center'>" . $medianavail . " / " . $averageavail . "</td>";	
+			print "<td align='center' bgcolor='#c0c0c0'>" . $mediantmcourse . " / " . $averagetmcourse . "</td>";			
 			print "</tr>";
 
 			$row++;
@@ -328,7 +350,10 @@ if (isset($_POST['track']) && $_POST['track'] > 0){
 			$objPHPExcel->getActiveSheet()->setCellValue('I'.$row,$averageoff);
 
 			$objPHPExcel->getActiveSheet()->setCellValue('J'.$row,$medianavail);
-			$objPHPExcel->getActiveSheet()->setCellValue('K'.$row,$averageavail);			
+			$objPHPExcel->getActiveSheet()->setCellValue('K'.$row,$averageavail);	
+
+			$objPHPExcel->getActiveSheet()->setCellValue('L'.$row,$mediantmcourse);
+			$objPHPExcel->getActiveSheet()->setCellValue('M'.$row,$averagetmcourse);						
 		}
 		print "</table>";
 		

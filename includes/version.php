@@ -1,5 +1,5 @@
 <?php
 function version(){
-	return '.5';
+	return '1.0';
 }
 ?>

@@ -107,7 +107,7 @@ $event_query = "
 	(select count(*) from incident where incident.event_id = event.ID) as counter,
 	*
 	FROM (track INNER JOIN event ON track.ID = event.track_id) INNER JOIN region ON event.region_id = region.ID
-	WHERE (((Now())<dateadd('d',1,[end_date])))
+	WHERE (((Now())<dateadd('d',90,[end_date])))
 	order by begin_date;
 ";
 $event_result = $db->query($event_query);
