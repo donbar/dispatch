@@ -13,7 +13,9 @@ $db = getdbconnection();
 	<script>
 	function changelogin(){
 		thevar = document.getElementById('event').value;
-		document.truck.event_id.value= thevar;
+		results = thevar.split("/");
+		document.truck.event_id.value= results[0];
+		document.truck.track_id.value= results[1];
 		document.truck.submit();
 	}
 	</script>
@@ -22,6 +24,7 @@ $db = getdbconnection();
 print "<body>";
 print "<form name='truck' method='post' action='basemanager.php'>";
 print "<input type='hidden' name='event_id'>";
+print "<input type='hidden' name='track_id'>";
 
 $event_query = "
 SELECT event.id AS evid, *
@@ -39,7 +42,7 @@ print "<center>";
 print "<span class='selecttext'>Event? </span><select name='event' id='event' class='largetext' onchange='changelogin();'>";
 print "<option value=0>Select One</option>";
 while ($event_row = $event_result->fetch(PDO::FETCH_ASSOC)) {
-	print "<option value='".$event_row['evid']."'>".$event_row['track_name']."</option>";
+	print "<option value='".$event_row['evid']."/".$event_row['track_id']."'>".$event_row['track_name']."</option>";
 }
 print "</select>";
 print "</center>";
